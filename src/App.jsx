@@ -1,5 +1,13 @@
 import React from "react";
+import Navegador from "./components/Navegador";
 
 export default function App() {
-  return <div className="bg-red-500">tomas</div>;
+
+  return (
+  <>
+  
+  <Navegador/>
+  </>
+  )
 }
+
