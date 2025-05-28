@@ -2,51 +2,51 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function SimpleCarousel() {
-    const [carouselImages, setCarouselImages] = useState([]); // Almacenará las URLs de las imágenes para el carrusel
-    const [loading, setLoading] = useState(true); // Estado para controlar la carga de las imágenes
-    const [error, setError] = useState(null); // Estado para manejar errores de la API
+    const [carouselImages, setCarouselImages] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const [currentIndex, setCurrentIndex] = useState(0); // Estado para el índice del slide actual
 
-    // Función para obtener una imagen aleatoria
+    // Función para obtener una imagen aleatoria de la api random 
     const fetchRandomMealImage = async () => {
         try {
             const response = await axios.get("http://www.themealdb.com/api/json/v1/1/random.php");
-            const meal = response.data.meals[0]; // La API devuelve un array, tomamos el primer (y único) elemento
-            return { src: meal.strMealThumb, alt: meal.strMeal || 'Random meal image' }; // Devuelve un objeto con src y alt
+            const meal = response.data.meals[0];
+            return { src: meal.strMealThumb, alt: meal.strMeal };
         } catch (err) {
             console.error("Error obteniendo imagenes:", err);
-            return null; // Devuelve null si hay un error
+            return null;
         }
     };
 
     // useEffect para cargar las imágenes cuando el componente se monta
     useEffect(() => {
-        const loadImages = async () => {
-            setLoading(true); // Establece el estado de carga a true al inicio
-            setError(null);    // Limpia cualquier error previo
+        const cargarFotos = async () => {
+            setLoading(true);
+            setError(null);
 
-            const desiredImageCount = 5; // Cantidad de imágenes que quieres en el carrusel
-            const fetchedImages = [];
+            const imagenesEnCarrusel = 5;
+            const fetchedImages = []; //En este array se van a meter las imagenes
 
-            // Hacemos múltiples peticiones para obtener varias imágenes
-            for (let i = 0; i < desiredImageCount; i++) {
+            // Hacemos múltiples peticiones para obtener las imagenes que queremos en el carrusel 
+            for (let i = 0; i < imagenesEnCarrusel; i++) {
                 const image = await fetchRandomMealImage();
                 if (image) {
                     fetchedImages.push(image);
                 }
             }
-
+            // se suben las imagenes al carrusel 
             if (fetchedImages.length > 0) {
-                setCarouselImages(fetchedImages); // Almacena las imágenes obtenidas
+                setCarouselImages(fetchedImages);
             } else {
                 setError("No se pudieron cargar las imágenes de las comidas.");
             }
-            setLoading(false); // Una vez que terminan las peticiones, establece loading a false
+            setLoading(false);
         };
 
-        loadImages(); // Llama a la función para cargar las imágenes
-    }, []); // Array de dependencias vacío para que se ejecute solo al montar
+        cargarFotos();
+    }, []);
 
     // Lógica del carrusel:
     const goToNext = () => {
@@ -94,11 +94,11 @@ function SimpleCarousel() {
     return (
         <div id="controls-carousel" className="relative w-full">
             {/* */}
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <div className="relative h-56 mt-15 overflow-hidden rounded-lg md:h-96">
                 {carouselImages.map((image, index) => (
                     <div
-                        key={image.src} // Usar src como key si es único, o un ID si la API lo proporciona
-                        className={`absolute block w-full h-full transform transition-opacity duration-700 ease-in-out ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        key={image.src}
+                        className={`absolute block w-full h-full transform transition-opacity duration-700 ease-in-out ${index === currentIndex ? 'opacity-100 z-1' : 'opacity-0 z-0'
                             }`}
                     >
                         <img
@@ -161,7 +161,7 @@ function SimpleCarousel() {
             </button>
 
             {/* */}
-            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            <div className="absolute  flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
                 {carouselImages.map((_, index) => (
                     <button
                         key={`indicator-${index}`}
@@ -179,3 +179,30 @@ function SimpleCarousel() {
 }
 
 export default SimpleCarousel;
+
+
+// Para montar en App
+
+
+// import React from "react";
+// import NavBar from "./components/NavBar";
+// import { useState } from 'react'
+// import SimpleCarousel from "./components/Carousel";
+
+// export default function App() {
+//   const [isOpen, setIsopen] = useState(false)
+
+//   const toggleModal = () => {
+//     setIsopen((prev) => {
+//       return !prev
+//     })
+//   }
+//   return (
+//     <>
+//       <NavBar
+//         onClose={toggleModal}
+//         isOpen={isOpen} />
+//       <SimpleCarousel />
+//     </>)
+// }
+
