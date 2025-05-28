@@ -1,4 +1,4 @@
-import React from "react";
+import Card_Container from "./components/Card_Container";
 import NavBar from "./components/NavBar";
 import { useState } from "react";
 import SimpleCarousel from "./components/Carousel";
@@ -17,6 +17,8 @@ export default function App() {
       <NavBar onClose={toggleModal} isOpen={isOpen} />
       <SimpleCarousel />
       <CategoryBar />
+      <Card_Container />
     </>
   );
+
 }
