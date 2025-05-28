@@ -17,8 +17,8 @@ export default function App() {
       <NavBar onClose={toggleModal} isOpen={isOpen} />
       <SimpleCarousel />
       <CategoryBar />
-      <Card_Container />
+      {/* "filter" es el prop que se va a usar para pasar los filtros a las cards */}
+      <Card_Container filter={"French"} />
     </>
   );
-
 }
