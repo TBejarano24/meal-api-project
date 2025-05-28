@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import { useState } from 'react'
-
+import SimpleCarousel from "./components/Carousel";
 
 export default function App() {
   const [isOpen, setIsopen] = useState(false)
@@ -16,6 +16,7 @@ export default function App() {
       <NavBar
         onClose={toggleModal}
         isOpen={isOpen} />
-
+      <SimpleCarousel />
     </>)
 }
+

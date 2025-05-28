@@ -13,9 +13,8 @@ export default function NavBar({ onClose, isOpen }) {
       <div
         onClick={handleClose}
         id="modal"
-        className={`fixed inset-0 bg-gray-600/60 flex flex-col items-baseline modal-entero ${
-          isOpen ? "flex" : "hidden"
-        }`}
+        className={`fixed inset-0 z-10 bg-gray-600/60 flex flex-col items-baseline modal-entero ${isOpen ? "flex" : "hidden"
+          }`}
       >
         <div
           id="menu"
