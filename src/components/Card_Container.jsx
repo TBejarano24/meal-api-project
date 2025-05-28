@@ -20,7 +20,7 @@ export default function Card_Container({ filter }) {
 
       try {
         const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/filter.pphp?a=${filter}`
+          `https://www.themealdb.com/api/json/v1/1/filter.php?a=${filter}`
         );
         setData(response.data.meals);
 
