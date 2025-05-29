@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function SimpleCarousel() {
@@ -11,7 +11,7 @@ function SimpleCarousel() {
     // Función para obtener una imagen aleatoria de la api random 
     const fetchRandomMealImage = async () => {
         try {
-            const response = await axios.get("http://www.themealdb.com/api/json/v1/1/random.php");
+            const response = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
             const meal = response.data.meals[0];
             return { src: meal.strMealThumb, alt: meal.strMeal };
         } catch (err) {
@@ -37,7 +37,7 @@ function SimpleCarousel() {
                 }
             }
             // se suben las imagenes al carrusel 
-            if (fetchedImages.length > 0) {
+            if (fetchedImages.length >= 1) {
                 setCarouselImages(fetchedImages);
             } else {
                 setError("No se pudieron cargar las imágenes de las comidas.");
