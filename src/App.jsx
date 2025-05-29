@@ -1,16 +1,18 @@
-import Card_Container from "./components/Card_Container";
 import NavBar from "./components/NavBar";
-import SimpleCarousel from "./components/Carousel";
-import CategoryBar from "./components/CategoryBar";
+import Home from "./pages/home/Home";
+import { BrowserRouter, Routes, Route, Link } from "react-router";
+import Receta from "./pages/receta/Receta";
 
 export default function App() {
   return (
     <>
       <NavBar />
-      <SimpleCarousel />
-      <CategoryBar />
-      {/* "filter" es el prop que se va a usar para pasar los filtros a las cards */}
-      <Card_Container filter={"French"} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/receta" element={<Receta />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
