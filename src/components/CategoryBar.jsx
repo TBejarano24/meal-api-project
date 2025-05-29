@@ -15,7 +15,7 @@ export default function CategoryBar() {
 
 
     return (
-        <div className='flex items-center justify-center mt-60 overflow-x-auto m-auto scroll-hidden'>
+        <div className='flex items-center mt-5 overflow-x-auto m-auto scroll-hidden'>
             {
                 data.map((category) => (
                     <CategoryItem
