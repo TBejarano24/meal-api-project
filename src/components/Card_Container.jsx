@@ -19,9 +19,7 @@ export default function Card_Container({ filter }) {
       setError("");
 
       try {
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?a=${filter}`
-        );
+        const response = await axios.get(`${filter}`);
         setData(response.data.meals);
 
         //Si hay un error se pesca acá
@@ -85,9 +83,7 @@ export default function Card_Container({ filter }) {
 
       {/* Aqui esta el titulo de las Cards  */}
       <section className=" border-black  my-5 ">
-        <h1 className="font-bold text-[23px] justify-self-center">
-          RECETAS DE "{filter.toUpperCase()}"
-        </h1>
+        <h1 className="font-bold text-[23px] justify-self-center">RECETAS</h1>
       </section>
       {/* Esto es el Contenedor de las Cards */}
       <div className=" border-black w-full max-w-[300px] grid grid-cols-1 justify-self-center sm:max-w-[620px] sm:grid-cols-2 lg:max-w-[1004px] lg:grid-cols-3">

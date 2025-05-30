@@ -8,7 +8,12 @@ export default function Home() {
       <SimpleCarousel />
       <CategoryBar />
       {/* "filter" es el prop que se va a usar para pasar los filtros a las cards */}
-      <Card_Container filter={"French"} />
+      {/* La url que está acá ahora mismo sólo está de ejemplo para mostrar que funciona */}
+      <Card_Container
+        filter={
+          "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast"
+        }
+      />
     </>
   );
 }
