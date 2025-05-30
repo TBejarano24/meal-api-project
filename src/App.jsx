@@ -12,6 +12,7 @@ export default function App() {
       <NavBar
         filter={filter}
         setFilter={setFilter} />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/receta" element={<Receta />} />
