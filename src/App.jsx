@@ -3,7 +3,7 @@ import Home from "./pages/home/Home";
 import { Routes, Route, Link } from "react-router";
 import Receta from "./pages/receta/Receta";
 import { useState } from "react";
-
+import Card_recetas from "./components/recetas/Card_recetas";
 
 export default function App() {
   const [filter, setFilter] = useState("https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast")
@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/receta" element={<Receta />} />
       </Routes>
+      <Card_recetas/>
     </>
   );
 }
