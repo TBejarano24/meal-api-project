@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function TraerDatos({ ingrediente }) {
+export default function TraerDatos({ url }) {
     const [photos, setPhotos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -21,18 +21,17 @@ export default function TraerDatos({ ingrediente }) {
     }
 
     useEffect(() => {
-        if (ingrediente) {
+        if (url) {
             setLoading(true);
             setError(null);
-            fetchData(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingrediente}`
-            );
+            fetchData(url);
         }
-    }, [ingrediente])
+    }, [url])
 
     if (loading) {
         return (
             <div className="w-full h-full pt-[100px] flex flex-wrap border-3">
-                <p>Cargando recetas de {ingrediente}...</p>
+                <p>Cargando recetas de ...</p>
             </div>
         );
     }
