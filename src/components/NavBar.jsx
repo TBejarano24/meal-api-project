@@ -80,38 +80,51 @@ export default function NavBar({ filter, setFilter }) {
             <span className=" pt-2  w-[100%] ">
               <ul className="sm:flex sm:justify-around">
                 <li>
-                  <button onClick={() => filtroBoton(chicken)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                    <a href=""></a>Recetas con pollo
-                  </button>
+                  <Link to="/">
+                    <button onClick={() => filtroBoton(chicken)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
+                      <a href=""></a>Recetas con pollo
+                    </button>
+                  </Link>
+
                 </li>
                 <li>
-                  <button onClick={() => filtroBoton(beef)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                    <a href=""></a>Recetas con res
-                  </button>
+                  <Link to="/">
+                    <button onClick={() => filtroBoton(beef)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
+                      <a href=""></a>Recetas con res
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={() => filtroBoton(salmon)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                    <a href=""></a>Recetas con salmón
-                  </button>
+                  <Link to="/">
+                    <button onClick={() => filtroBoton(salmon)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
+                      <a href=""></a>Recetas con salmón
+                    </button>
+                  </Link>
                 </li>
               </ul>
             </span>
             <span className=" pt-2  w-[100%]">
               <ul className="sm:flex sm:justify-around">
                 <li>
-                  <button onClick={() => filtroBoton(cheese)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                    <a href=""></a>Recetas con queso
-                  </button>
+                  <Link to="/">
+                    <button onClick={() => filtroBoton(cheese)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
+                      <a href=""></a>Recetas con queso
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={() => filtroBoton(eggs)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                    <a href=""></a>Recetas con huevos
-                  </button>
+                  <Link to="/">
+                    <button onClick={() => filtroBoton(eggs)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
+                      <a href=""></a>Recetas con huevos
+                    </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={() => filtroBoton(pork)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                    <a href=""></a>Recetas con cerdo
-                  </button>
+                  <Link to="/">
+                    <button onClick={() => filtroBoton(pork)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
+                      <a href=""></a>Recetas con cerdo
+                    </button>
+                  </Link>
                 </li>
               </ul>
             </span>
