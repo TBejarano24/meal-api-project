@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Card_recetas() {
   return (
-    <div className='flex lg:flex-row flex-col  border-black h-[420px] ' >
+    <div className='flex lg:flex-row flex-col  border-black h-[420px] mt-20' >
         {/* Section Imagen/Video */}
       <section className=' border-black lg:h-[400px] lg:w-[800px]  w-[350px] h-[400px] flex justify-end  lg:ml-0 '>
         <img src='https://www.themealdb.com/images/media/meals/8x09hy1560460923.jpg' className='rounded-[10px] lg:ml-0 ml-5 lg:w-[600px] lg:h-[400px] h-[280px] w-[350px]'/>

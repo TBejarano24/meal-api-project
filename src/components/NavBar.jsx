@@ -82,7 +82,7 @@ export default function NavBar({ filter, setFilter }) {
                 <li>
                   <Link to="/">
                     <button onClick={() => filtroBoton(chicken)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                      <a href=""></a>Recetas con pollo
+                      Recetas con pollo
                     </button>
                   </Link>
 
@@ -90,14 +90,14 @@ export default function NavBar({ filter, setFilter }) {
                 <li>
                   <Link to="/">
                     <button onClick={() => filtroBoton(beef)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                      <a href=""></a>Recetas con res
+                      Recetas con res
                     </button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <button onClick={() => filtroBoton(salmon)} className="text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                      <a href=""></a>Recetas con salmón
+                      Recetas con salmón
                     </button>
                   </Link>
                 </li>
@@ -108,21 +108,21 @@ export default function NavBar({ filter, setFilter }) {
                 <li>
                   <Link to="/">
                     <button onClick={() => filtroBoton(cheese)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                      <a href=""></a>Recetas con queso
+                      Recetas con queso
                     </button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <button onClick={() => filtroBoton(eggs)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                      <a href=""></a>Recetas con huevos
+                      Recetas con huevos
                     </button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/">
                     <button onClick={() => filtroBoton(pork)} className=" text-[12px] sm:text-[20px] font-bold px-5 py-1 mt-2 bg-lime-100 rounded-md">
-                      <a href=""></a>Recetas con cerdo
+                      Recetas con cerdo
                     </button>
                   </Link>
                 </li>

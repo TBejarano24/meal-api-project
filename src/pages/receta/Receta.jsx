@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import useData from "../../hooks/useData";
 import Indications from "../../components/Indications";
 import Card_Container from "../../components/Card_Container";
+import Card_recetas from "../../components/Card_recetas";
 
 
 
@@ -32,6 +33,9 @@ export default function Receta() {
 
   return (
     <>
+    <Card_recetas/>
+
+    
       <Indications
         recipe={apiMeals}
         ingredientes={ingredientes}

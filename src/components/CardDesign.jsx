@@ -5,11 +5,13 @@ import { Link } from "react-router";
 (Sólo tiene la imagen, el nombre y la id, si quieren pueden sugerir cambios) */
 export default function CardDesign({ data }) {
   // Esto está acá por si quieren ver los valores de "data"
-  console.log("hola", data);
+  //console.log("hola", data);
 
   return (
     // Contenedor principal con clases necesarias para el efecto hover
-    <div className="relative group w-[90%] h-[280px]   justify-self-center rounded-[16px] overflow-hidden">
+
+    <div className="relative group w-[90%] h-[280px]   justify-self-center rounded-[16px] py-4 my-4 overflow-hidden">
+
       {/* Aqui va la foto */}
       <section>
         <img
@@ -25,7 +27,7 @@ export default function CardDesign({ data }) {
       </section>
 
       {/* Overlay que aparece al hacer hover */}
-      <div className="absolute inset-0 bg-[#1f1f1f]/30 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+      <div className="absolute inset-0 bg-[#1f1f1f]/30 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300 p-4 mt-4">
         <p className="text-white text-sm mb-4 line-clamp-3 text-center">
           {data.strInstructions?.substring(0, 100) ||
             "Deliciosa receta para preparar en casa..."}
