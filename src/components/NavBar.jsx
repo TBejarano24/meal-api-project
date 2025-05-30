@@ -75,7 +75,7 @@ export default function NavBar({ filter, setFilter }) {
         <div
           id="menu"
           className="bg-white h-[180px] mt-[90px] sm:mt-[60px] w-full border-10 border-[#8fc636] flex flex-col sm:items-center">
-          <p className='text-red-700 font-bold pl-10 pt-2 w-[100%]'>Recetas:</p>
+          <p className='text-red-700 font-bold pl-10 pt-2 w-[100%]'>Recetas por ingrediente:</p>
           <div className='flex sm:flex-col items-center justify-center w-[100%]'>
             <span className=" pt-2  w-[100%] ">
               <ul className="sm:flex sm:justify-around">
@@ -124,24 +124,4 @@ export default function NavBar({ filter, setFilter }) {
     </>
   );
 }
-//cambios
-// import React from "react";
-// import NavBar from "./components/NavBar";
-// import { useState } from 'react'
 
-// export default function App() {
-//   const [isOpen, setIsopen] = useState(false)
-
-//   const toggleModal = () => {
-//     setIsopen((prev) => {
-//       return !prev
-//     })
-//   }
-//   return (
-//     <>
-//       <NavBar
-//         onClose={toggleModal}
-//         isOpen={isOpen} />
-
-//     </>)
-// }

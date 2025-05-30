@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import CategoryItem from './CategoryItem'
 import axios from 'axios'
 
-export default function CategoryBar() {
+export default function CategoryBar({ filter, setFilter }) {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -14,15 +13,21 @@ export default function CategoryBar() {
     }, [])
 
 
+    function renderCard(categoria) {
+        setFilter(categoria);
+    }
+
+
     return (
         <div className='flex items-center mt-5 overflow-x-auto m-auto scroll-hidden'>
             {
                 data.map((category) => (
-                    <CategoryItem
-                        foto={category.strCategoryThumb}
-                        nombre={category.strCategory}
-                        key={category.idCategory}
-                    />
+                    <div key={category.idCategory} className='flex flex-col items-center justify-center px-4 shrink-0 cursor-pointer '>
+                        <button onClick={() => renderCard(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`)}>
+                            <img src={category.strCategoryThumb} alt={category.strCategory} className='w-[100px] p-4 m-auto' />
+                            <h3 className='p-4 shrink-0 m-auto'>{category.strCategory}</h3>
+                        </button>
+                    </div>
                 ))
             }
         </div>
