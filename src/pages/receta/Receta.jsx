@@ -39,7 +39,7 @@ export default function Receta() {
 
       <Card_Container
         filter={
-          `https://www.themealdb.com/api/json/v1/1/search.php?s=${nombre}`
+          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${response?.meals[0].strCategory}`
         }
       />
 
