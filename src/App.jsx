@@ -6,8 +6,9 @@ import Receta from "./pages/receta/Receta";
 export default function App() {
   return (
     <>
-      <NavBar />
+
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/receta" element={<Receta />} />
