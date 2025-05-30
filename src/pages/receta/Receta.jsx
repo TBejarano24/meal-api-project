@@ -32,19 +32,19 @@ export default function Receta() {
 
   return (
     <>
-    <Indications
-      recipe={apiMeals}
-      ingredientes={ingredientes}
-      medidas={medidas} />
+      <Indications
+        recipe={apiMeals}
+        ingredientes={ingredientes}
+        medidas={medidas} />
 
       <Card_Container
-              filter={
-                "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast"
-              }
-            />
+        filter={
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${nombre}`
+        }
+      />
 
-      </>
-      
+    </>
+
   )
 
 }
