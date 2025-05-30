@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from "react-router";
 
 export default function Navegador() {
     const [inputValue, setInputValue] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false)
+    let navigate = useNavigate();
     async function handleChange(e) {
         const value = e.target.value;
         setInputValue(value);
@@ -26,9 +28,6 @@ export default function Navegador() {
                 setShowSuggestions(false);
 
             }
-
-
-
         } catch (error) {
             console.error("Error al cargar sugerencias", error);
             setSuggestions([]);
@@ -40,12 +39,10 @@ export default function Navegador() {
     function handleSuggestionClick(suggestion) {
         setInputValue(suggestion);
         setSuggestions([]);
-        setShowSuggestions(false);
+        setShowSuggestions(false);        
+        navigate(`/receta/${suggestion}`)
 
     }
-
-
-
 
     return (
         <div>
@@ -74,7 +71,7 @@ export default function Navegador() {
                                 key={index}
                                 className="px-4 py-2 cursor-pointer hover:bg-[#8fc636]"
                                 onClick={() => handleSuggestionClick(item)}
-                            >
+                            >                            
                                 {item}
                             </li>
                         ))}
@@ -85,3 +82,4 @@ export default function Navegador() {
         </div >
     )
 }
+
