@@ -22,8 +22,8 @@ export default function CategoryBar({ filter, setFilter }) {
         <div className='flex items-center mt-5 overflow-x-auto m-auto scroll-hidden'>
             {
                 data.map((category) => (
-                    <div key={category.idCategory} className='flex flex-col items-center justify-center px-4 shrink-0 cursor-pointer '>
-                        <button onClick={() => renderCard(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`)}>
+                    <div key={category.idCategory} className='flex flex-col items-center justify-center px-4 shrink-0  '>
+                        <button className='cursor-pointer ' onClick={() => renderCard(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category.strCategory}`)}>
                             <img src={category.strCategoryThumb} alt={category.strCategory} className='w-[100px] p-4 m-auto' />
                             <h3 className='p-4 shrink-0 m-auto'>{category.strCategory}</h3>
                         </button>
