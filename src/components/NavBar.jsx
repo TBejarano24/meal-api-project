@@ -1,11 +1,11 @@
 import Navegador from "./Navegador";
 import { useState } from "react";
-import TraerDatos from "./TraerDatos";
 import { Link } from 'react-router';
 
-export default function NavBar() {
+
+export default function NavBar({ filter, setFilter }) {
   const [isOpen, setIsopen] = useState(false);
-  const [url, setUrl] = useState(null)
+
   const chicken = `https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken`
   const beef = `https://www.themealdb.com/api/json/v1/1/filter.php?i=beef`
   const salmon = `https://www.themealdb.com/api/json/v1/1/filter.php?i=salmon`
@@ -25,8 +25,8 @@ export default function NavBar() {
     }
   }
 
-  function filtroBoton(url) {
-    setUrl(url);
+  function filtroBoton(ingrediente) {
+    setFilter(ingrediente);
     toggleModal()
   }
 
@@ -56,7 +56,9 @@ export default function NavBar() {
           </div>
         </div>
         <div className='w-[100%] flex items-center justify-around'>
-          <Navegador />
+          <div className='max-w-[90%]'>
+            <Navegador />
+          </div>
           <div
             onClick={toggleModal}
             className=" w-[50px] h-[100%]  cursor-pointer flex items-center">
@@ -118,7 +120,7 @@ export default function NavBar() {
 
         </div>
       </div>
-      {url && <TraerDatos url={url} />}
+
     </>
   );
 }
