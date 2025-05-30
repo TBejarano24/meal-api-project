@@ -13,7 +13,10 @@ export default function Home() {
         filter={filter}
         setFilter={setFilter} />
       <SimpleCarousel />
-      <CategoryBar />
+      <CategoryBar
+        filter={filter}
+        setFilter={setFilter}
+      />
       {/* "filter" es el prop que se va a usar para pasar los filtros a las cards */}
       {/* La url que está acá ahora mismo sólo está de ejemplo para mostrar que funciona */}
       <Card_Container
